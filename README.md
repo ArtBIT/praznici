@@ -3,7 +3,6 @@
 > Biblioteka koja proverava da li je zadati datum državni praznik Rebublike Srbije ili ne
 
 ![Travis CI](https://img.shields.io/travis/artbit/praznici/master)
-![NPM Version](https://img.shields.io/npm/v/praznici.svg)
 ![GitHub issues badge](https://img.shields.io/github/issues/ArtBIT/praznici)
 ![GitHub forks badge](https://img.shields.io/github/forks/ArtBIT/praznici)
 ![GitHub stars badge](https://img.shields.io/github/stars/ArtBIT/praznici)
