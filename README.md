@@ -22,7 +22,7 @@ yarn global add praznici
 
 ## Usage
 
-```
+```js
 import { isNationalHoliday } from 'praznici';
 
 isNationalHoliday('2021-11-11'); // true
