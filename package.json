@@ -1,0 +1,39 @@
+{
+  "name": "praznici",
+  "version": "1.0.0",
+  "description": "Biblioteka koja omogućava proveru da li je datum državni praznik u Republici Srbiji ili ne.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "prepublish": "babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtBIT/praznici.git"
+  },
+  "keywords": [
+    "drzavni",
+    "praznik",
+    "praznici",
+    "neradni",
+    "datumi",
+    "uskrs",
+    "nova",
+    "godina"
+  ],
+  "author": "Djordje Ungar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArtBIT/praznici/issues"
+  },
+  "homepage": "https://github.com/ArtBIT/praznici#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "jest": "^27.2.2"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
