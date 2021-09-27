@@ -1,30 +1,3 @@
-# Praznici
-
-
-### Šta je ovo?
-Ove je biblioteka za proveru državnih praznika Republike Srbije.
-
----
-
-### Instalacija
-
-#### NPM
-
-    $ npm install -g praznici
-    
-#### Yarn
-
-    $ yarn global add praznici
-
----
-
-### Primeri korišćenja
-
-
-
-# Licenca
-MIT
-
 # praznici
 
 > Biblioteka koja proverava da li je zadati datum državni praznik Rebublike Srbije ili ne
@@ -41,6 +14,10 @@ MIT
 
 ```bash
 npm i -S praznici
+```
+
+```bash
+yarn global add praznici
 ```
 
 ## Usage
