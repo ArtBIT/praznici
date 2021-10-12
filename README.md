@@ -45,7 +45,9 @@ yarn global add praznici
 ## Usage
 
 ```js
-import { isNationalHoliday } from 'praznici';
+const { isNationalHoliday } = require('praznici');
+// ...or if you're using ES6 modules
+// import { isNationalHoliday } from 'praznici'; 
 
 isNationalHoliday('2021-11-11'); // true
 isNationalHoliday(new Date(2021,10,11)); // true
