@@ -51,6 +51,21 @@ isNationalHoliday('2021-11-11'); // true
 isNationalHoliday(new Date(2021,10,11)); // true
 ```
 
+Računanje datuma Uskrsa za odredjenu godinu:
+```js
+const { uskrsZaGodinu} = require('praznici/lib/uskrs');
+
+[2010,2015,2019,2020,2021].map(year => console.log(uskrsZaGodinu(year)));
+
+// 2010-04-04
+// 2015-04-12
+// 2019-04-28
+// 2020-04-19
+// 2021-05-02
+// Ukoliko želite proverite na https://sr.wikipedia.org/wiki/%D0%A3%D1%81%D0%BA%D1%80%D1%81
+```
+
+
 ## License
 
 [MIT](http://vjpr.mit-license.org)
