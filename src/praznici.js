@@ -75,4 +75,6 @@ export const isNationalHoliday = date => {
     return doesNationalHolidayFallOnDate(date);
 };
 
+export const daLiJeNacionalniPraznik = isNationalHoliday;
+
 export default isNationalHoliday;

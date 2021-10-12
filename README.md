@@ -45,12 +45,12 @@ yarn global add praznici
 ## Usage
 
 ```js
-const { isNationalHoliday } = require('praznici');
+const { daLiJeNacionalniPraznik } = require('praznici');
 // ...or if you're using ES6 modules
-// import { isNationalHoliday } from 'praznici'; 
+// import { daLiJeNacionalniPraznik } from 'praznici'; 
 
-isNationalHoliday('2021-11-11'); // true
-isNationalHoliday(new Date(2021,10,11)); // true
+daLiJeNacionalniPraznik('2021-11-11'); // true
+daLiJeNacionalniPraznik(new Date(2021,10,11)); // true
 ```
 
 Računanje datuma Uskrsa za odredjenu godinu:
