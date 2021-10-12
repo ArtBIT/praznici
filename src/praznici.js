@@ -15,13 +15,14 @@
 // Zakonom je propisano da ako jedan od datuma kada se praznuju navedeni
 // državni praznici padne u nedelju, ne radi se prvog narednog radnog dana.
 
-import moment from 'moment';
+import dayjs from 'dayjs';
 import calculateOrthodoxEasterForYear from './uskrs';
+const ISO_DATE_FORMAT = 'YYYY-MM-DD';
 
 // Does the date fall on the exact date of national holiday
 const doesNationalHolidayFallOnDate = inputDate => {
-    const mdate = moment(inputDate);
-    const date = mdate.format('YYYY-MM-DD');
+    const mdate = dayjs(inputDate);
+    const date = mdate.format(ISO_DATE_FORMAT);
     switch (date.substr(5)) {
         // Nova godina - 1. i 2. januar
         case "01-01":
@@ -40,8 +41,8 @@ const doesNationalHolidayFallOnDate = inputDate => {
     }
 
     const easter = calculateOrthodoxEasterForYear(mdate.year());
-    const theGoodFriday = moment(easter).add(-2, "days").format('YYYY-MM-DD');
-    const theHolySaturday = moment(easter).add(-1, "days").format('YYYY-MM-DD');
+    const theGoodFriday = dayjs(easter).add(-2, "days").format(ISO_DATE_FORMAT);
+    const theHolySaturday = dayjs(easter).add(-1, "days").format(ISO_DATE_FORMAT);
     if (date == easter || date == theGoodFriday || date == theHolySaturday) {
         return true;
     }
@@ -52,20 +53,20 @@ export const isNationalHoliday = date => {
     // Zakonom je propisano da ako jedan od datuma kada se praznuju
     // navedeni državni praznici padne u nedelju, ne radi se prvog
     // narednog radnog dana.
-    const sunday = moment(date).startOf("week").format('YYYY-MM-DD');;
+    const sunday = dayjs(date).startOf("week").format(ISO_DATE_FORMAT);;
     if (doesNationalHolidayFallOnDate(sunday)) {
         let prviRadniDan = sunday;
         let loopCount = 0; // failsafe against infinite loop
         while (loopCount++ < 7 && doesNationalHolidayFallOnDate(prviRadniDan)) {
-            prviRadniDan = moment(prviRadniDan).add(1, "days");
+            prviRadniDan = dayjs(prviRadniDan).add(1, "days");
         }
         // Ako uskrs i prvi maj padaju na isti dan, onda je i ponedeljak i utorak neradan
-        const easter = calculateOrthodoxEasterForYear(moment(date).year());
+        const easter = calculateOrthodoxEasterForYear(dayjs(date).year());
         const uskrsPadaNaPrviMaj = easter.substr(5) === '05-01';
         if (uskrsPadaNaPrviMaj && easter === sunday) {
             //prviRadniDan = dateAdd(prviRadniDan, 1, "days");
         }
-        const days = moment(date).diff(prviRadniDan, "days");
+        const days = dayjs(date).diff(prviRadniDan, "days");
         if (days <= 0) {
             return true;
         }

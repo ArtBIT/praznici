@@ -1,6 +1,6 @@
 {
   "name": "praznici",
-  "version": "1.0.31",
+  "version": "1.0.4",
   "description": "Biblioteka koja omogućava proveru da li je datum državni praznik u Republici Srbiji ili ne.",
   "main": "lib/index.js",
   "scripts": {
@@ -36,6 +36,6 @@
     "jest": "^27.2.2"
   },
   "dependencies": {
-    "moment": "^2.29.1"
+    "dayjs": "^1.10.7"
   }
 }
