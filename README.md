@@ -55,7 +55,9 @@ isNationalHoliday(new Date(2021,10,11)); // true
 
 Računanje datuma Uskrsa za odredjenu godinu:
 ```js
-const { uskrsZaGodinu} = require('praznici/lib/uskrs');
+const { uskrsZaGodinu } = require('praznici/lib/uskrs');
+// ...or if you're using ES6 modules
+// import { uskrsZaGodinu } from 'praznici/src/uskrs'; 
 
 [2010,2015,2019,2020,2021].map(year => console.log(uskrsZaGodinu(year)));
 
